@@ -5,6 +5,7 @@ import Button from './src/components/Button'
 import Icons from './src/components/Icons'
 import Images from './src/components/Images'
 import ItemsList from './src/components/ItemsList'
+import Networking from './src/components/Networking'
 
 const App = () => {
   const [name, setName] = useState('')
@@ -13,7 +14,7 @@ const App = () => {
 
   return (
     <View style={styles.appContainer}>
-      <ItemsList />
+      <Networking />
     </View>
   )
 }
