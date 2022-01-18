@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useEffect, useState } from 'react'
+import { ScrollView, StyleSheet, Text, View, TextInput } from 'react-native'
+import Box from './src/components/Box'
+import Button from './src/components/Button'
+import Icons from './src/components/Icons'
+import Images from './src/components/Images'
+import ItemsList from './src/components/ItemsList'
 
-export default function App() {
+const App = () => {
+  const [name, setName] = useState('')
+
+  const handleInputChange = (text) => setName(text)
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.appContainer}>
+      <ItemsList />
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  container: {
+  appContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'black',
+    flexDirection: 'column',
   },
-});
+  label: {
+    color: 'black',
+    fontSize: 12,
+    fontWeight: '700',
+    marginBottom: 10,
+  },
+  textInput: {
+    backgroundColor: 'white',
+    padding: 10,
+    width: 200,
+    fontSize: 18,
+  },
+  output: {
+    fontSize: 40,
+  },
+})
+
+export default App
